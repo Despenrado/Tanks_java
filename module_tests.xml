@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="module_tests" default="compile.module.tests">
+  <dirname property="module.tests.basedir" file="${ant.file.module_tests}"/>
+  
+  <property name="module.jdk.home.tests" value="${project.jdk.home}"/>
+  <property name="module.jdk.bin.tests" value="${project.jdk.bin}"/>
+  <property name="module.jdk.classpath.tests" value="${project.jdk.classpath}"/>
+  
+  <property name="compiler.args.tests" value="-encoding UTF-8 -source 10 -target 10 ${compiler.args}"/>
+  
+  <property name="tests.output.dir" value="${module.tests.basedir}/out/production/tests"/>
+  <property name="tests.testoutput.dir" value="${module.tests.basedir}/out/test/tests"/>
+  
+  <path id="tests.module.bootclasspath">
+    <!-- Paths to be included in compilation bootclasspath -->
+  </path>
+  
+  <path id="tests.module.production.classpath">
+    <path refid="${module.jdk.classpath.tests}"/>
+    <pathelement location="${basedir}/../lwjgl-2.9.3/jar/lwjgl.jar"/>
+    <pathelement location="${basedir}/../lwjgl-2.9.3/jar/AppleJavaExtensions.jar"/>
+    <pathelement location="${basedir}/../lwjgl-2.9.3/jar/asm-debug-all.jar"/>
+    <pathelement location="${basedir}/../lwjgl-2.9.3/jar/jinput.jar"/>
+    <pathelement location="${basedir}/../lwjgl-2.9.3/jar/laf-plugin-7.2.1.jar"/>
+    <pathelement location="${basedir}/../lwjgl-2.9.3/jar/laf-widget-7.2.1.jar"/>
+    <pathelement location="${basedir}/../lwjgl-2.9.3/jar/log4j-api-2.0-beta9.jar"/>
+    <pathelement location="${basedir}/../lwjgl-2.9.3/jar/lwjgl-debug.jar"/>
+    <pathelement location="${basedir}/../lwjgl-2.9.3/jar/lwjgl_test.jar"/>
+    <pathelement location="${basedir}/../lwjgl-2.9.3/jar/lwjgl_util.jar"/>
+    <pathelement location="${basedir}/../lwjgl-2.9.3/jar/lwjgl_util_applet.jar"/>
+    <pathelement location="${basedir}/../lwjgl-2.9.3/jar/lzma.jar"/>
+    <pathelement location="${basedir}/../lwjgl-2.9.3/jar/substance-7.2.1.jar"/>
+    <pathelement location="${basedir}/../lwjgl-2.9.3/jar/trident-7.2.1.jar"/>
+    <pathelement location="${basedir}/../slick-util.jar"/>
+  </path>
+  
+  <path id="tests.runtime.production.module.classpath">
+    <pathelement location="${tests.output.dir}"/>
+    <pathelement location="${basedir}/../lwjgl-2.9.3/jar/lwjgl.jar"/>
+    <pathelement location="${basedir}/../lwjgl-2.9.3/jar/AppleJavaExtensions.jar"/>
+    <pathelement location="${basedir}/../lwjgl-2.9.3/jar/asm-debug-all.jar"/>
+    <pathelement location="${basedir}/../lwjgl-2.9.3/jar/jinput.jar"/>
+    <pathelement location="${basedir}/../lwjgl-2.9.3/jar/laf-plugin-7.2.1.jar"/>
+    <pathelement location="${basedir}/../lwjgl-2.9.3/jar/laf-widget-7.2.1.jar"/>
+    <pathelement location="${basedir}/../lwjgl-2.9.3/jar/log4j-api-2.0-beta9.jar"/>
+    <pathelement location="${basedir}/../lwjgl-2.9.3/jar/lwjgl-debug.jar"/>
+    <pathelement location="${basedir}/../lwjgl-2.9.3/jar/lwjgl_test.jar"/>
+    <pathelement location="${basedir}/../lwjgl-2.9.3/jar/lwjgl_util.jar"/>
+    <pathelement location="${basedir}/../lwjgl-2.9.3/jar/lwjgl_util_applet.jar"/>
+    <pathelement location="${basedir}/../lwjgl-2.9.3/jar/lzma.jar"/>
+    <pathelement location="${basedir}/../lwjgl-2.9.3/jar/substance-7.2.1.jar"/>
+    <pathelement location="${basedir}/../lwjgl-2.9.3/jar/trident-7.2.1.jar"/>
+    <pathelement location="${basedir}/../slick-util.jar"/>
+  </path>
+  
+  <path id="tests.module.classpath">
+    <path refid="${module.jdk.classpath.tests}"/>
+    <pathelement location="${tests.output.dir}"/>
+    <pathelement location="${basedir}/../lwjgl-2.9.3/jar/lwjgl.jar"/>
+    <pathelement location="${basedir}/../lwjgl-2.9.3/jar/AppleJavaExtensions.jar"/>
+    <pathelement location="${basedir}/../lwjgl-2.9.3/jar/asm-debug-all.jar"/>
+    <pathelement location="${basedir}/../lwjgl-2.9.3/jar/jinput.jar"/>
+    <pathelement location="${basedir}/../lwjgl-2.9.3/jar/laf-plugin-7.2.1.jar"/>
+    <pathelement location="${basedir}/../lwjgl-2.9.3/jar/laf-widget-7.2.1.jar"/>
+    <pathelement location="${basedir}/../lwjgl-2.9.3/jar/log4j-api-2.0-beta9.jar"/>
+    <pathelement location="${basedir}/../lwjgl-2.9.3/jar/lwjgl-debug.jar"/>
+    <pathelement location="${basedir}/../lwjgl-2.9.3/jar/lwjgl_test.jar"/>
+    <pathelement location="${basedir}/../lwjgl-2.9.3/jar/lwjgl_util.jar"/>
+    <pathelement location="${basedir}/../lwjgl-2.9.3/jar/lwjgl_util_applet.jar"/>
+    <pathelement location="${basedir}/../lwjgl-2.9.3/jar/lzma.jar"/>
+    <pathelement location="${basedir}/../lwjgl-2.9.3/jar/substance-7.2.1.jar"/>
+    <pathelement location="${basedir}/../lwjgl-2.9.3/jar/trident-7.2.1.jar"/>
+    <pathelement location="${basedir}/../slick-util.jar"/>
+  </path>
+  
+  <path id="tests.runtime.module.classpath">
+    <pathelement location="${tests.testoutput.dir}"/>
+    <pathelement location="${tests.output.dir}"/>
+    <pathelement location="${basedir}/../lwjgl-2.9.3/jar/lwjgl.jar"/>
+    <pathelement location="${basedir}/../lwjgl-2.9.3/jar/AppleJavaExtensions.jar"/>
+    <pathelement location="${basedir}/../lwjgl-2.9.3/jar/asm-debug-all.jar"/>
+    <pathelement location="${basedir}/../lwjgl-2.9.3/jar/jinput.jar"/>
+    <pathelement location="${basedir}/../lwjgl-2.9.3/jar/laf-plugin-7.2.1.jar"/>
+    <pathelement location="${basedir}/../lwjgl-2.9.3/jar/laf-widget-7.2.1.jar"/>
+    <pathelement location="${basedir}/../lwjgl-2.9.3/jar/log4j-api-2.0-beta9.jar"/>
+    <pathelement location="${basedir}/../lwjgl-2.9.3/jar/lwjgl-debug.jar"/>
+    <pathelement location="${basedir}/../lwjgl-2.9.3/jar/lwjgl_test.jar"/>
+    <pathelement location="${basedir}/../lwjgl-2.9.3/jar/lwjgl_util.jar"/>
+    <pathelement location="${basedir}/../lwjgl-2.9.3/jar/lwjgl_util_applet.jar"/>
+    <pathelement location="${basedir}/../lwjgl-2.9.3/jar/lzma.jar"/>
+    <pathelement location="${basedir}/../lwjgl-2.9.3/jar/substance-7.2.1.jar"/>
+    <pathelement location="${basedir}/../lwjgl-2.9.3/jar/trident-7.2.1.jar"/>
+    <pathelement location="${basedir}/../slick-util.jar"/>
+  </path>
+  
+  
+  <patternset id="excluded.from.module.tests">
+    <patternset refid="ignored.files"/>
+  </patternset>
+  
+  <patternset id="excluded.from.compilation.tests">
+    <patternset refid="excluded.from.module.tests"/>
+  </patternset>
+  
+  <path id="tests.module.sourcepath">
+    <dirset dir="${module.tests.basedir}">
+      <include name="src"/>
+    </dirset>
+  </path>
+  
+  
+  <target name="compile.module.tests" depends="compile.module.tests.production,compile.module.tests.tests" description="Compile module tests"/>
+  
+  <target name="compile.module.tests.production" depends="register.custom.compilers" description="Compile module tests; production classes">
+    <mkdir dir="${tests.output.dir}"/>
+    <javac2 destdir="${tests.output.dir}" debug="${compiler.debug}" nowarn="${compiler.generate.no.warnings}" memorymaximumsize="${compiler.max.memory}" fork="true" executable="${module.jdk.bin.tests}/javac">
+      <compilerarg line="${compiler.args.tests}"/>
+      <bootclasspath refid="tests.module.bootclasspath"/>
+      <classpath refid="tests.module.production.classpath"/>
+      <src refid="tests.module.sourcepath"/>
+      <patternset refid="excluded.from.compilation.tests"/>
+    </javac2>
+    
+    <copy todir="${tests.output.dir}">
+      <fileset dir="${module.tests.basedir}/src">
+        <patternset refid="compiler.resources"/>
+        <type type="file"/>
+      </fileset>
+    </copy>
+  </target>
+  
+  <target name="compile.module.tests.tests" depends="register.custom.compilers,compile.module.tests.production" description="compile module tests; test classes" unless="skip.tests"/>
+  
+  <target name="clean.module.tests" description="cleanup module">
+    <delete dir="${tests.output.dir}"/>
+    <delete dir="${tests.testoutput.dir}"/>
+  </target>
+</project>
