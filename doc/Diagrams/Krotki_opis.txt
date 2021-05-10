@@ -1,0 +1,3 @@
+Czego chce gamer? grać. Dla tego mamy Start game(jezeli wyjsć - quit).
+Grać można samemu(single) lub w dwóch(multi). Po wyborze zaczyna się gra.
+Gracz kieruje człogem za pomocą control the tnak w które wchodzi kilka klawisz sterowania.

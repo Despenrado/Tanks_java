@@ -222,6 +222,7 @@ public class MyDisplay
             MyDisplay.display();
             Display.update();
             Display.sync(60);
+
         }
     }
 
